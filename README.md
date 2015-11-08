@@ -3,7 +3,7 @@ The web application component for the [alga-app](https://github.com/kellyrose090
 
 Part of an ongoing [UW-Parkside Software Engineering I](http://green.uwp.edu/departments/computer.science/courses/csci475.cfm) project.
 
-## Prerequisites
+## Production Prerequisites
 
 This app uses the [Lumen](http://lumen.laravel.com/) framework and the following system requirements must be satisfied:
 
@@ -14,11 +14,35 @@ This app uses the [Lumen](http://lumen.laravel.com/) framework and the following
 
 In addition to the requirements above, you will also need to have [Composer](https://getcomposer.org/) installed on your local system and production system.
 
-## Installation
+The installation precedures below are for **development** purposes only.
 
-Lumen supports [Vagrant](https://www.vagrantup.com/) and has an official pre-packaged box called [Homestead](http://laravel.com/docs/5.1/homestead).
-Following the link for more information. The following will get you up and running any Debian based linux flavor.
+## Installation - Linux
+The following will get you up and running any Debian based linux. If you do not want to alter your system, then see the Vagrant installation section.
 
-1. `$ git clone https://github.com/ciscoo/alga-web.git`
-2. `$ composer install`
-3. `$ php -S localhost:8888 -t ./public`
+### Install PHP
+Use the latest available version of PHP as a matter of principle.
+```
+sudo add-apt-repository ppa:ondrej/php5-5.6
+sudo apt-get update
+sudo apt-get install php5-cli
+```
+Note we are installing `php-cli` and **not** `php5`, we do not need Apache. As of PHP 5.4.0, the CLI SAPI provides a built-in web server that is suitable for devlopement purposes.
+
+### Install Composer
+
+```
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+```
+
+### Build
+We're now ready to start developing.
+
+```
+git clone https://github.com/ciscoo/alga-web.git
+cd alga-web
+composer install
+php -S localhost:8888 -t public/
+```
+
+Open your browser to `http://localhost:8888`
