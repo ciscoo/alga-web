@@ -16,5 +16,5 @@ $app->get('/', function () use ($app) {
 });
 
 $app->get('/login', function () {
-    return view('login');
+    return view('pages.login');
 });
