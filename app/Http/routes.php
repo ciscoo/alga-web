@@ -11,10 +11,8 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->welcome();
-});
+$app->get('/', 'IndexController@showIndex');
 
 $app->get('/login', function () {
-    return view('pages.login');
+    return view('pages/login');
 });
