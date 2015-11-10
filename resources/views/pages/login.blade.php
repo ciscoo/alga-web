@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('styles')
+  <link rel="stylesheet" href="assets/styles/login.css">
+@stop
+
 @section('title', 'Login')
 
 @section('content')
@@ -15,7 +19,7 @@
              <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button id="login" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
   </div>
 <script src="assets/vendor/jquery-1.11.3.min.js"></script>

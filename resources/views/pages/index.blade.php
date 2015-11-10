@@ -16,16 +16,15 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <div class="container">
-        <h1>You have arrived.</h1>
-    </div>
+    <br><br><br><br> <!-- Quick and dirty for presentation, fix later. -->
+    <iframe id="forecast_embed" type="text/html" frameborder="0" height="245px" width="100%" src="http://forecast.io/embed/#lat=42.5822&lon=87.8456&name=Kenosha, WI"> </iframe>
 </div>
 <script src="assets/vendor/jquery-1.11.3.min.js"></script>
 <script src="assets/vendor/bootstrap.min.js"></script>

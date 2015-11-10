@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   @include('includes.head')
+  @yield('styles')
 </head>
 <body>
   @yield('content')

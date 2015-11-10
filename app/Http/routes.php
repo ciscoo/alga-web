@@ -16,3 +16,5 @@ $app->get('/', 'IndexController@showIndex');
 $app->get('/login', function () {
     return view('pages/login');
 });
+
+$app->get('/dashboard', 'DashboardController@authenticate');
