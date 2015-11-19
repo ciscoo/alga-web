@@ -42,7 +42,7 @@ We're now ready to start developing.
 git clone https://github.com/ciscoo/alga-web.git
 cd alga-web
 composer install
-php -S localhost:8888 -t public/
+php artisan serve
 ```
 
 Open your browser to `http://localhost:8888`
