@@ -18,3 +18,11 @@ $app->get('/login', function () {
 });
 
 $app->get('/dashboard', 'DashboardController@authenticate');
+
+$app->group(['namespace' => 'App\Http\Controllers'], function () use ($app) {
+    $api = 'api/v1/';
+    $app->get($api.'alga/all', ['uses' => 'AlgaController@getAll', 'as' => 'allAlgae']);
+    $app->get($api.'alga/{id}', ['uses' => 'AlgaController@getAlga', 'as' => 'singleAlga']);
+    $app->post($api.'alga', ['uses' => 'AlgaController@saveAlga', 'as' => 'saveAlga']);
+    $app->delete($api.'alga/{id}', ['uses' => 'AlgaController@deleteAlga', 'as' => 'deleteAlga']);
+});
