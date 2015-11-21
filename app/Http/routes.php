@@ -1,7 +1,8 @@
 <?php
 
-$app->get('/', function () use ($app) {
-    return $app->welcome();
+// TODO: Create IndexController
+$app->get('/', function () {
+    return view('pages.index');
 });
 
 // TODO: Create route group.
