@@ -5,5 +5,6 @@ $app->get('/', function () use ($app) {
 });
 
 // TODO: Create route group.
-$app->get('/all', 'AlgaController@getAll');
-$app->post('/insert', 'AlgaController@saveAlga');
+$app->get('/alga/all', 'AlgaController@getAll');
+$app->get('/alga/{id}', 'AlgaController@getSingle');
+$app->post('/alga', 'AlgaController@saveAlga');

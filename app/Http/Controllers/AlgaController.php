@@ -9,13 +9,33 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 class AlgaController extends BaseController
 {
     /**
-     * Get all the records of the Alga model.
+     * Get all of the models from the database.
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function getAll()
     {
         $alga = Alga::all();
+        return response()->json($alga);
+    }
+
+    /**
+     * Execute a query for a single record by ID.
+     *
+     * @param int $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function getSingle($id)
+    {
+        $alga = Alga::find($id);
+
+        if(empty($alga)) {
+            return response()->json([
+                'result' => 0,
+                'message' => 'No record was found.'
+            ]);
+        }
+
         return response()->json($alga);
     }
 
