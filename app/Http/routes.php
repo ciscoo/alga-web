@@ -1,11 +1,11 @@
 <?php
 
-// TODO: Create IndexController
-$app->get('/', function () {
-    return view('pages.index');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 // TODO: Create route group.
-$app->get('/alga/all', 'AlgaController@getAll');
-$app->get('/alga/{id}', 'AlgaController@getSingle');
-$app->post('/alga', 'AlgaController@saveAlga');
+// TODO: Secure routes.
+Route::get('api/alga/all', 'AlgaController@getAll');
+Route::get('api/alga/{id}', 'AlgaController@getSingle');
+Route::post('api/alga', 'AlgaController@saveAlga');

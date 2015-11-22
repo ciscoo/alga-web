@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Alga;
+use App\Models\Alga;
 use Illuminate\Http\Request;
-use Laravel\Lumen\Routing\Controller as BaseController;
 
-class AlgaController extends BaseController
+class AlgaController extends Controller
 {
     /**
      * Get all of the models from the database.
