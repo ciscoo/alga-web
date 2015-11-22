@@ -15,6 +15,14 @@ class Authenticate
     protected $auth;
 
     /**
+     * When a non-authenticated user tries to access a protected route,
+     * they are bounced to the login page.
+     *
+     * @var string
+     */
+    protected $bounceUrl = '/';
+
+    /**
      * Create a new filter instance.
      *
      * @param  Guard  $auth
@@ -38,7 +46,7 @@ class Authenticate
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('auth/login');
+                return redirect()->guest($this->bounceUrl);
             }
         }
 

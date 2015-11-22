@@ -8,6 +8,16 @@
 
 @section('content')
 <div class="container">
+  @if (count($errors) > 0)
+    <div class="alert alert-danger">
+      <strong>Whoops!</strong> There were some problems with your input.<br><br>
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
   <form method="POST" action="/auth/login" class="form-signin">
     {!! csrf_field() !!}
     <label for="inputEmail" class="sr-only">Email address</label>

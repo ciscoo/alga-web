@@ -23,6 +23,20 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    /*
+     * The redirection path on successful authentication.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/dashboard';
+    
+    /*
+     * The redirection path if user is not successfully authenticated.
+     *
+     * @var string
+     */
+    protected $loginPath = '/';
+
     /** @noinspection PhpDocSignatureInspection */
 
     /**
