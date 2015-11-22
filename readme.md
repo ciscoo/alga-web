@@ -5,7 +5,7 @@ Part of an ongoing [UW-Parkside Software Engineering I](http://green.uwp.edu/dep
 
 ## Production Prerequisites
 
-This app uses the [Lumen](http://lumen.laravel.com/) framework and the following system requirements must be satisfied:
+This app uses the [Laravel](http://laravel.com/) framework and the following system requirements must be satisfied:
 
 * PHP >= 5.5.9
 * OpenSSL PHP Extension
@@ -42,6 +42,18 @@ We're now ready to start developing.
 git clone https://github.com/ciscoo/alga-web.git
 cd alga-web
 composer install
+```
+
+Now we're going to need to set up the `.env` configuration file. An example of one is included by default. Either make a copy or rename it to `.env` and set the fields accordingly,
+mainly the databases fields. You'll need to generate `APP_KEY` with the following:
+
+```
+php artisan key:generate
+```
+
+Finally, run the application:
+
+```
 php artisan serve
 ```
 
