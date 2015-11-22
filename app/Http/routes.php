@@ -9,4 +9,4 @@ Route::get('/', function () {
 Route::get('api/alga/index', 'AlgaController@index');
 Route::get('api/alga/show/{id}', 'AlgaController@show');
 Route::post('api/alga/store', 'AlgaController@store');
-Route::post('api/alga/destroy/{id}', 'AlgaController@destroy');
+Route::delete('api/alga/destroy/{id}', 'AlgaController@destroy');
