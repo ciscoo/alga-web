@@ -37,6 +37,6 @@ class CreateAlgasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('algas');
+        Schema::drop('alga');
     }
 }
