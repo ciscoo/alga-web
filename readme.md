@@ -14,7 +14,7 @@ This app uses the [Laravel](http://laravel.com/) framework and the following sys
 
 In addition to the requirements above, you will also need to have [Composer](https://getcomposer.org/) installed on your local system and production system.
 
-The installation precedures below are for **development** purposes only.
+The installation procedures below are for **development** purposes only.
 
 ## Installation - Linux
 The following will get you up and running any Debian based linux. If you do not want to alter your system, then see the Vagrant installation section.
@@ -36,7 +36,7 @@ sudo mv composer.phar /usr/local/bin/composer
 ```
 
 ### Build
-We're now ready to start developing.
+We're now ready to start developing. Assuming you have `git` already installed on your system (you should):
 
 ```
 git clone https://github.com/ciscoo/alga-web.git
@@ -63,9 +63,7 @@ Open your browser to `http://localhost:8888`
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Documentation for how this app is set up will be added later.
 
 ### License
 
