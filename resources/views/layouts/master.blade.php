@@ -10,7 +10,7 @@
     <!-- TODO: Compile with Gulp. -->
     <!-- TODO: Minify & Generate SASS maps. -->
     <!-- TODO: Concatenate into one file. -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     @yield('page-styles')
   </head>
   <body>
@@ -19,6 +19,7 @@
     <!-- TODO: Minify & Uglify -->
     <!-- TODO: Concatenate into one file. -->
     @yield('scripts')
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>

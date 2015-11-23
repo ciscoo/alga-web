@@ -16,18 +16,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><span>Alga</span> | Dashboard</a>
+                <a class="navbar-brand" href="#">Project name</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/auth/logout">Log out</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">{{ $name }}</a></li>
                     <li><a href="#">Help</a></li>
                 </ul>
             </div>
@@ -38,7 +31,7 @@
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><span></span><a href="#">Overview</a></li>
+                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">Reports</a></li>
                     <li><a href="#">Analytics</a></li>
                     <li><a href="#">Export</a></li>
