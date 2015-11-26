@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Alga;
+use App\Repositories\AlgaRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -10,13 +11,25 @@ use App\Http\Requests;
 class AlgaController extends Controller
 {
     /**
+     * The Alga repository instance.
+     *
+     * @var AlgaRepository
+     */
+    protected $algaRepository;
+
+    public function __construct(AlgaRepository $algaRepository)
+    {
+        $this->algaRepository = $algaRepository;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return response()->json(Alga::all());
+        return response()->json($this->algaRepository->all());
     }
 
     /**
@@ -37,8 +50,8 @@ class AlgaController extends Controller
      */
     public function store(Request $request)
     {
-        Alga::create($request->all());
-        return response()->json(['success' => true]);
+        $alga = $this->algaRepository->store($request);
+        return response()->json(['success' => true, 'alga' => $alga]);
     }
 
     /**
@@ -49,7 +62,7 @@ class AlgaController extends Controller
      */
     public function show($id)
     {
-        $alga = Alga::find($id);
+        $alga = $this->algaRepository->show($id);
 
         if(empty($alga)) {
             return response()->json([
@@ -92,17 +105,19 @@ class AlgaController extends Controller
      */
     public function destroy($id)
     {
-        $alga = Alga::find($id);
+        $alga = $this->algaRepository->destroy($id);
 
-        if(empty($alga)) {
-            return response()->json([
-                'success' => false,
-                'message' => 'No record was deleted.'
-            ]);
-        }
+//        $alga = Alga::find($id);
+//
+//        if(empty($alga)) {
+//            return response()->json([
+//                'success' => false,
+//                'message' => 'No record was deleted.'
+//            ]);
+//        }
+//
+//        $alga->delete($id);
 
-        $alga->delete($id);
-
-        return response()->json(['success' => true]);
+        return response()->json($alga);
     }
 }
