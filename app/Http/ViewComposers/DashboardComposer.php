@@ -29,6 +29,6 @@ class DashboardComposer
      */
     public function compose(View $view)
     {
-        $view->with('algae', $this->alga->show(1));
+        $view->with('algae', $this->alga->all());
     }
 }
