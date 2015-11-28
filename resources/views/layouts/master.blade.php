@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Alga | @yield('title')</title>
 
     <!-- TODO: Compile with Gulp. -->
@@ -18,8 +19,8 @@
     <!-- TODO: Compile with Gulp. -->
     <!-- TODO: Minify & Uglify -->
     <!-- TODO: Concatenate into one file. -->
-    @yield('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    @yield('scripts')
   </body>
 </html>

@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class DashboardServiceProvider extends ServiceProvider
+class DetailsServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -14,7 +14,7 @@ class DashboardServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer(
-            'auth.dashboard', 'App\Http\ViewComposers\DashboardComposer'
+            'auth.details', 'App\Http\ViewComposers\DetailsComposer'
         );
     }
 

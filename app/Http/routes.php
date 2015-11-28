@@ -1,5 +1,7 @@
 <?php
 
+// TODO: Create route groups for all.
+
 // TODO: I don't know what to show here, so login page.
 Route::get('/', function () {
     return view('pages.index');
@@ -15,13 +17,19 @@ Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
 
 // Protected routes
-Route::get('/dashboard', ['middleware' => 'auth', function() {
-    return view('auth.dashboard');
-}]);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', function() {
+        return view('auth.dashboard');
+    });
+
+    Route::get('/details/{id}', 'AlgaController@showDetail');
+//    Route::get('/details/{id}', function() {
+//        return view('auth.details');
+//    });
+});
 
 // API routes
-// TODO: Create route group.
-// TODO: Secure routes.
+// TODO: Secure API routes.
 Route::get('api/alga/index', 'AlgaController@index');
 Route::get('api/alga/show/{id}', 'AlgaController@show');
 Route::post('api/alga/store', 'AlgaController@store');

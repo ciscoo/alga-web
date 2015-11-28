@@ -3,7 +3,7 @@
 @section('title', 'Welcome')
 
 @section('page-styles')
-    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
 @stop
 
 @section('content')
@@ -16,7 +16,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><span>Alga</span> | Dashboard</a>
+                <a class="navbar-brand" href="#"><span>Alga</span> | Details</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -36,18 +36,17 @@
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><span></span><a href="#">Overview</a></li>
-                    <li><a href="#">Reports</a></li>
+                    <li><span></span><a href="/dashboard">Overview</a></li>
+                    <li class="active"><a href=""><span></span>Reports</a></li>
                     <li><a href="#">Analytics</a></li>
                     <li><a href="#">Export</a></li>
                 </ul>
             </div>
-            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h1 class="page-header">Welcome</h1>
-                <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=42.3583&lon=-71.0603&name=Downtown Boston"> </iframe>
+            <div class="col-sm-9 col-sm-offset- col-md-10 col-md-offset-2 main">
+                <canvas id="myChart" width="900" height="400"></canvas>
                 <h2 class="sub-header">Recent Entries</h2>
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-hover">
                         <thead>
                         <tr class="clickable-row">
                             <th>#</th>
@@ -58,19 +57,51 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($algae as $alga)
-                        <tr>
-                        <td><a href="/details/{{ $alga->id }}">{{ $alga->id }}</a></td>
-                        <td>{{ $alga->total_chla }}</td>
-                        <td>{{ $alga->cyano_chla }}</td>
-                        <td>{{ $alga->lux }}</td>
-                        <td>{{ $alga->pbot }}</td>
-                        </tr>
-                        @endforeach
+                            <tr>
+                                <td>asdf</td>
+                                <td>45</td>
+                                <td>453</td>
+                                <td>453</td>
+                                <td>453</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+@stop
+
+@section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script type="text/javascript">
+        var data = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [65, 59, 80, 81, 56, 55, 40]
+                },
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [28, 48, 40, 19, 86, 27, 90]
+                }
+            ]
+        };
+        var ctx = $("#myChart").get(0).getContext("2d");
+        var myNewChart = new Chart(ctx).Line(data);
+        Chart.defaults.global.responsive = true;
+    </script>
 @stop

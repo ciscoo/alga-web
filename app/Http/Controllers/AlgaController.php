@@ -106,18 +106,17 @@ class AlgaController extends Controller
     public function destroy($id)
     {
         $alga = $this->algaRepository->destroy($id);
-
-//        $alga = Alga::find($id);
-//
-//        if(empty($alga)) {
-//            return response()->json([
-//                'success' => false,
-//                'message' => 'No record was deleted.'
-//            ]);
-//        }
-//
-//        $alga->delete($id);
-
         return response()->json($alga);
+    }
+
+    public function showDetail($id)
+    {
+        $alga = $this->algaRepository->show($id);
+
+        if(empty($alga)) {
+            return view('auth.details')->with('alga', $alga);
+        }
+
+        return view('auth.details')->with('alga', $alga);
     }
 }
