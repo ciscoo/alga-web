@@ -1,5 +1,9 @@
+/public/styles
+/public/js
+/node_modules
 /vendor
 /storage/logs
 /storage/framework/cache
 .idea/
+.tmp/
 .env

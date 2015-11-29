@@ -62,7 +62,7 @@ gulp.task('scripts', () =>
       './vendor/zurb/foundation/js/foundation.tab.js',
       './vendor/zurb/foundation/js/foundation.tooltip.js',
       './vendor/zurb/foundation/js/foundation.topbar.js',
-      './app/scripts/app.js'
+      './resources/assets/js/app.js'
     ])
       .pipe($.newer('.tmp/scripts'))
       .pipe($.sourcemaps.init())
