@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+  <div class="alert callout">asdas</div>
   @if (count($errors) > 0)
     <div class="alert callout">
       <p><strong>Whoops!</strong> There were some problems with your input.</p>

@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Alga | @yield('title')</title>
 
-    <link rel="stylesheet" href="/styles/app.min.css">
+    <link rel="stylesheet" href="/styles/app.css">
     @yield('page-styles')
   </head>
   <body>

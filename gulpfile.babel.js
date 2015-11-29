@@ -23,7 +23,7 @@ gulp.task('styles', () => {
   ];
 
   const SASS_OPTIONS = {
-    includePaths: ['vendor/zurb/foundation/scss/'],
+    includePaths: ['vendor/components/foundation/scss/'],
     precision: 10,
   };
 
