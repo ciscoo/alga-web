@@ -35,6 +35,29 @@ curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
+### Install Node.js
+
+Using `n` as our node version management:
+
+```
+curl -L http://git.io/n-install | bash
+```
+
+Now simply run:
+
+```
+n latest
+```
+
+The latest version of Node.js will be installed. It's that simple.
+
+### Install Gulp
+After installing Node.js, install Gulp.js:
+
+```
+npm install --global gulp
+```
+
 ### Build
 We're now ready to start developing. Assuming you have `git` already installed on your system (you should):
 
@@ -42,6 +65,7 @@ We're now ready to start developing. Assuming you have `git` already installed o
 git clone https://github.com/ciscoo/alga-web.git
 cd alga-web
 composer install
+npm install
 ```
 
 Now we're going to need to set up the `.env` configuration file. An example of one is included by default. Either make a copy or rename it to `.env` and set the fields accordingly,
