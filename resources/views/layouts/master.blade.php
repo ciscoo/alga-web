@@ -9,7 +9,6 @@
     <title>Alga | @yield('title')</title>
 
     <link rel="stylesheet" href="/styles/app.css">
-    @yield('page-styles')
   </head>
   <body>
     @yield('content')

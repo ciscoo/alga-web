@@ -1,0 +1,22 @@
+{
+  "name": "alga-web",
+  "description": "",
+  "main": "",
+  "authors": [
+    "ciscoo <cisco@mateo.io>"
+  ],
+  "license": "Apache",
+  "homepage": "https://github.com/ciscoo/alga-web",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6"
+  }
+}

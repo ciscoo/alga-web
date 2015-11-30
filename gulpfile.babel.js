@@ -23,7 +23,7 @@ gulp.task('styles', () => {
   ];
 
   const SASS_OPTIONS = {
-    includePaths: ['vendor/components/foundation/scss/'],
+    includePaths: ['bower_components/bootstrap-sass/assets/stylesheets/'],
     precision: 10,
   };
 
@@ -36,7 +36,6 @@ gulp.task('styles', () => {
     .pipe($.sass(SASS_OPTIONS).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
-    // Concatenate and minify styles
     .pipe($.if('*.css', $.minifyCss()))
     .pipe($.size({title: 'styles'}))
     .pipe($.sourcemaps.write('./'))
@@ -47,24 +46,8 @@ gulp.task('scripts', () =>
   gulp.src([
     // Explicitly list scripts in the right
     // order to be correctly concatenated !
-    './vendor/components/jquery/jquery.js',
-    './vendor/zurb/foundation/js/foundation/foundation.js',
-    './vendor/zurb/foundation/js/foundation.abide.js',
-    './vendor/zurb/foundation/js/foundation.accordion.js',
-    './vendor/zurb/foundation/js/foundation.alert.js',
-    './vendor/zurb/foundation/js/foundation.clearing.js',
-    './vendor/zurb/foundation/js/foundation.dropdown.js',
-    './vendor/zurb/foundation/js/foundation.equalizer.js',
-    './vendor/zurb/foundation/js/foundation.interchange.js',
-    './vendor/zurb/foundation/js/foundation.joyride.js',
-    './vendor/zurb/foundation/js/foundation.magellan.js',
-    './vendor/zurb/foundation/js/foundation.offcanvas.js',
-    './vendor/zurb/foundation/js/foundation.orbit.js',
-    './vendor/zurb/foundation/js/foundation.reveal.js',
-    './vendor/zurb/foundation/js/foundation.slider.js',
-    './vendor/zurb/foundation/js/foundation.tab.js',
-    './vendor/zurb/foundation/js/foundation.tooltip.js',
-    './vendor/zurb/foundation/js/foundation.topbar.js',
+    './bower_components/jquery/dist/jquery.js',
+    './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
     './resources/assets/js/app.js'
   ])
     .pipe($.newer('.tmp/scripts'))
