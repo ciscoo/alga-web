@@ -15,13 +15,13 @@
                 </ul>
             </div>
         @endif
-        <form method="POST" action="/auth/login" class="form-signin">
+        <form method="POST" action="/register" class="form-signin">
             {!! csrf_field() !!}
-            <input type="text" class="form-control" value="{{ old('name') }}" placeholder="John Doe" required autofocus>
+            <input type="text" class="form-control" value="{{ old('name') }}" placeholder="John Doe" name="name" required autofocus>
             <input type="email" class="form-control" value="{{ old('email') }}" placeholder="Email address" name="email" required>
             <input type="password" class="form-control" placeholder="Password" name="password" required>
             <input type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required>
-            <a href="register" class="btn btn-lg btn-success btn-block">Register</a>
+            <button class="btn btn-lg btn-success btn-block" type="submit">Register</button>
         </form>
     </div>
 @stop
