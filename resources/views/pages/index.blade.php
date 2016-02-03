@@ -26,6 +26,7 @@
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <a href="register" class="btn btn-lg btn-success btn-block">Register</a>
+        <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
     </form>
 </div>
 @stop

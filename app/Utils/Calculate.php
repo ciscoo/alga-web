@@ -2,6 +2,7 @@
 
 namespace App\Utils;
 
+// TODO: Implements algorithm from Android app.
 
 class Calculate
 {

@@ -17,6 +17,11 @@ class AlgaController extends Controller
      */
     protected $algaRepository;
 
+    /**
+    * Create a new controller instance.
+    *
+    * @return void
+    */
     public function __construct(AlgaRepository $algaRepository)
     {
         $this->algaRepository = $algaRepository;
@@ -39,7 +44,7 @@ class AlgaController extends Controller
      */
     public function create()
     {
-        //
+        // TODO: Implement create()
     }
 
     /**
@@ -82,7 +87,7 @@ class AlgaController extends Controller
      */
     public function edit($id)
     {
-        //
+        // TODO: implement edit()
     }
 
     /**
@@ -94,7 +99,7 @@ class AlgaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // TODO: Implement update()
     }
 
     /**

@@ -24,18 +24,11 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /*
-     * The redirection path on successful authentication.
+     * Where to redirect users after login / registration.
      *
      * @var string
      */
     protected $redirectTo = '/dashboard';
-
-    /*
-     * The redirection path if user is not successfully authenticated.
-     *
-     * @var string
-     */
-    protected $loginPath = '/';
 
     /** @noinspection PhpDocSignatureInspection */
 
@@ -46,7 +39,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
 
     /**
