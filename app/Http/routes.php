@@ -31,7 +31,4 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     Route::get('/details/{id}', 'AlgaController@showDetail');
-//    Route::get('/details/{id}', function() {
-//        return view('auth.details');
-//    });
 });
