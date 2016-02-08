@@ -23,7 +23,7 @@ gulp.task('styles', () => {
   ];
 
   const SASS_OPTIONS = {
-    includePaths: ['bower_components/bootstrap-sass/assets/stylesheets/'],
+    includePaths: ['node_modules/bootstrap-sass/assets/stylesheets/'],
     precision: 10,
   };
 
@@ -47,8 +47,8 @@ gulp.task('scripts', () =>
   gulp.src([
     // Explicitly list scripts in the right
     // order to be correctly concatenated !
-    './bower_components/jquery/dist/jquery.js',
-    './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+    './node_modules/jquery/dist/jquery.js',
+    './node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
     './resources/assets/js/app.js'
   ])
     .pipe($.newer('.tmp/scripts'))
