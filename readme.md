@@ -32,7 +32,7 @@ $ sudo apt-get install php7.0
 ```
 
 ### Install Alga-Web
-You will need `git`, `Node.js`, `Bower`, `Composer`, and `Gulp.js` installed on your system.
+You will need `git`, `Node.js`, `Composer`, and `Gulp.js` installed on your system.
 
 First retrieve the `master` branch of the project and place outside your web root:
 
@@ -46,7 +46,6 @@ Change directory into the folder and run the following commands that will instal
 ```
 $ composer install
 $ npm install
-$ bower install
 $ gulp
 ```
 
