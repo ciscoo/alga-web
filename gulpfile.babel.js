@@ -36,7 +36,7 @@ gulp.task('styles', () => {
     .pipe($.sass(SASS_OPTIONS).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe($.if('*.css', $.minifyCss()))
+    .pipe($.if('*.css', $.cssnano()))
     .pipe($.rename({suffix: '.min'}))
     .pipe($.size({title: 'styles'}))
     .pipe($.sourcemaps.write('./'))
