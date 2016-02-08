@@ -66,6 +66,9 @@ $ sudo chown -R www-data: app/storage
 $ sudo chmod -R 755 app/storage
 ```
 
+### Database
+Simply run `php artisan migrate` to create the database schema.
+
 ### Document Root
 Finally, set the document root for the domain or subdomain where the app is deployed:
 
@@ -132,6 +135,12 @@ mainly the databases fields. You'll need to generate `APP_KEY` with the followin
 
 ```
 php artisan key:generate
+```
+
+Create the database schemas:
+
+```
+php artisan migrate
 ```
 
 Finally, run the application:
